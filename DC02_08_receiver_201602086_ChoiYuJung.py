@@ -1,7 +1,7 @@
 import socket
 
 socket = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
-port = 9800
+port = 9900
 socket.bind(('',port))
 
 data_transferred = 0
