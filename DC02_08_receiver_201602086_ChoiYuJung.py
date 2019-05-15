@@ -1,13 +1,15 @@
 import socket
 
 socket = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
-port = 8900
+port = 8800
 socket.bind(('',port))
+
+filename, addr = socket.recvfrom(1024)
 
 data_transferred = 0
 _data,addr = socket.recvfrom(1024)
 print("file recv start from",addr[0])
-print("File Name : ",_data.decode())
+print("File Name : ",filename.decode())
 filesize = int(_data.decode())
 print("File Size : ",filesize)
 

@@ -3,10 +3,12 @@ import os
 
 socket = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
 ip = "192.168.31.139"
-port = 8900
+port = 8800
 addr = ip,port
 
 filename = input("input your file name : ")
+socket.sendto(str(filename).encode(),addr)
+
 f=open(filename,"rb")
 data=f.read(1024)
 
